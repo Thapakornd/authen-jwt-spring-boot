@@ -8,7 +8,7 @@
 <body>
     <h1>Welcome user 101</h1>
     <div>
-        <p>${user}</p>
+        <p>${users}</p>
     </div>
 </body>
 </html>
