@@ -36,6 +36,12 @@ public class SecurityFilter extends OncePerRequestFilter {
         filterChain.doFilter(req, res);
     }
 
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest req) throws ServletException {
+        String path = req.getRequestURI();
+        return path.startsWith("/auth/login") || path.startsWith("/webjars/");
+    }
+
     private String recoverToken(HttpServletRequest req) {
         var authHeader = req.getHeader("Authorization");
         if (authHeader == null) return null;

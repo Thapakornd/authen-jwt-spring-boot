@@ -8,6 +8,6 @@ public class WebBlogController {
 
     @RequestMapping("/")
     public String home() {
-        return "index.jsp";
+        return "index";
     }
 }
